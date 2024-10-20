@@ -22,11 +22,11 @@ class AllCompany:
     """
 
     class Urls:
-        url = "https://ui-avatars.com/api/?name=All+Company&background=random"
+        url = "https://ui-avatars.com/api/?name=HR&background=random"
 
-    company = "All Company"
+    company = "Hetosa"
     icon = Urls()
-    text = "All companies"
+    text = "Hetosa Farmers"
     id = None
 
 
@@ -41,8 +41,8 @@ def get_companies(request):
     companies = [
         [
             "all",
-            "All Company",
-            "https://ui-avatars.com/api/?name=All+Company&background=random",
+            "Hetosa Farmers",
+            "https://ui-avatars.com/api/?name=HR&background=random",
             False,
         ],
     ] + companies
@@ -56,7 +56,7 @@ def get_companies(request):
             if str(company[0]) == selected_company:
                 company[3] = True
                 company_selected = True
-    return {"all_companies": companies, "company_selected": company_selected}
+    return {"Hetosa Farmers": companies, "company_selected": company_selected}
 
 
 @login_required
@@ -78,11 +78,11 @@ def update_selected_company(request):
         )
     )
 
-    text = "Other Company"
+    text = "Hetosa Farmers"
     if company_id == request.user.employee_get.employee_work_info.company_id:
-        text = "My Company"
+        text = "Hetosa Farmers"
     if company_id == "all":
-        text = "All companies"
+        text = "Hetosa Farmers"
     company = {
         "company": company.company,
         "icon": company.icon.url,
@@ -121,7 +121,7 @@ def white_labelling_company(request):
         }
     else:
         return {
-            "white_label_company_name": "Horilla",
+            "white_label_company_name": "Hetosa",
             "white_label_company": None,
         }
 
