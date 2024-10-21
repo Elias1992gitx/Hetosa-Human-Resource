@@ -39,7 +39,7 @@
                     <div class="oh-input-group">
                         <label class="oh-label" for="username">{% trans "Username" %}</label>
                         <input type="text" id="username" name="username" class="oh-input w-100"
-                            placeholder="e.g. adam.luis@horilla.com" />
+                            placeholder="e.g. user@hetosa.com" />
                     </div>
                     <div class="oh-input-group">
                         <label class="oh-label" for="password">{% trans "Password" %}</label>
@@ -96,20 +96,28 @@
                     </div>
                 {% endif %}
             </div>
-            <div>
-                <img src={% if white_label_company.icon %}
+          
+            <div style="align-items: center; justify-content: center;">
+              
+                <img  src={% if white_label_company.icon %}
+               
                         "{{white_label_company.icon.url}}"
                         alt="{{white_label_company_name}}"
                         style=" opacity:.90; 200px; height: 140px;"
-                    {% else %}
-                        "{% static 'images/ui/auth-logo.png' %}" alt="Horilla"
-                    {% endif %}
-                />
+                   {% else %}
+    "{% static 'images/ui/auth-logo.png' %}" alt="Nexus Labs"
+{% endif %}>
+
+         <!-- <p style="text-align: center; font-size: medium; color: rgb(112, 114, 77);">Powered By Nexus Labs</p>            -->
+             
+</img>
+
                 {% if white_label_company %}
                 <p style=" font-size: large; color: gray; text-align: center;" class="mt-2">{{white_label_company}}</p>
                 {% endif %}
 
             </div>
+               <p style="text-align: center; font-size: small; color: rgb(184, 136, 15); ">Powered By Nexus Labs</p>           
         </main>
     </div>
     <script src="{% static '/build/js/web.frontend.min.js' %}"></script>
